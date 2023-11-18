@@ -9,16 +9,9 @@ const TodoItem: React.FC<ITodoItem> = (props) => {
   const { id, title, complete, toggleTodo, removeTodo } = props;
 
   return (
-    <div
-      style={{
-        margin: '0 0 10px 0',
-        display: 'flex',
-        width: '200px'
-      }}>
+    <li className='content__list-item'>
       <input
-        style={{
-          margin: '0 10px 0 0',
-        }}
+        className='content__checkbox'
         type='checkbox'
         checked={complete}
         onChange={() => toggleTodo(id)}
@@ -27,19 +20,11 @@ const TodoItem: React.FC<ITodoItem> = (props) => {
         {title}
       </span>
       <button
-        style={{
-          background: 'transparent',
-          border: 'none',
-          outline: 'none',
-          color: 'red',
-          padding: '0',
-          margin: '0 0 0 auto',
-        }}
-        onClick={() => removeTodo(id)}
-      >
-        X
+        className='content__delete-btn'
+        onClick={() => removeTodo(id)}>
+        удалить
       </button>
-    </div>)
+    </li>)
 }
 
 export {

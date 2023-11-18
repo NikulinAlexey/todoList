@@ -9,19 +9,22 @@ interface ITodoListProps {
 }
 
 const TodoList: React.FC<ITodoListProps> = (props) => {
-  const { items, toggleTodo, removeTodo} = props;
+  const { items, toggleTodo, removeTodo } = props;
   return (
     <div>
-      {
-        items.map(todo => (
-          <TodoItem
-            key={todo.id}
-            toggleTodo={toggleTodo}
-            removeTodo={removeTodo}
-            {...todo}
-          />
-        ))
-      }
+      <ul className='content__list'>
+        {
+          items.map(todo => (
+            <TodoItem
+              key={todo.id}
+              toggleTodo={toggleTodo}
+              removeTodo={removeTodo}
+              {...todo}
+            />
+          ))
+        }
+
+      </ul>
     </div>
   )
 }
